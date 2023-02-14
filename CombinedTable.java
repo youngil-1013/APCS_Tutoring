@@ -1,4 +1,6 @@
 public class CombinedTable {
+
+    // Testing implementation using the main method
     public static void main(String[] args) {
         SingleTable t1 = new SingleTable(4, 60.0, 74);
         SingleTable t2 = new SingleTable(8, 70.0, 74);
