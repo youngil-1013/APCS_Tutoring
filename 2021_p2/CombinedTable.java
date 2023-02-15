@@ -1,14 +1,33 @@
 public class CombinedTable {
     // Height, single tables,avg of view quality, num seats
-    private int height;
     private int num_seats;
-    private double avg_quality;
+    private double desireability;
     private SingleTable single_table1;
     private SingleTable single_table2;
 
+    // Constructor Class
     public CombinedTable(SingleTable single_table1, SingleTable single_table2) {
         this.single_table1 = single_table1;
         this.single_table2 = single_table2;
+        this.num_seats = single_table1.getNumSeats() + single_table2.getNumSeats() - 2;
+        if (single_table1.getHeight() == single_table2.getHeight()) {
+            this.desireability = (single_table1.getViewQuality() + single_table2.getViewQuality()) / 2;
+        } else {
+            this.desireability = (single_table1.getViewQuality() + single_table2.getViewQuality()) / 2 - 10;
+        }
+    }
+
+    // Compares the number of people with the number of seats available
+    public boolean canSeat(int numOfPeople) {
+        if (this.num_seats >= numOfPeople) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public double getDesireability() {
+        return this.desireability;
     }
 
     // Testing implementation using the main method
