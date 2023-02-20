@@ -12,7 +12,12 @@ public class ClubMembers {
     }
 
     public ArrayList<MemberInfo> removeMembers(int year) {
-        return null;
+        ArrayList<MemberInfo> RS = new ArrayList<MemberInfo>();
+        for(int i =0; i <= memberList.size(); i++){
+            if(memberList.get(i).getGradYear() <= year){
+
+            }
+        }
     }
 
     public static void main(String[] args) {
