@@ -15,9 +15,13 @@ public class ClubMembers {
         ArrayList<MemberInfo> RS = new ArrayList<MemberInfo>();
         for(int i =0; i <= memberList.size(); i++){
             if(memberList.get(i).getGradYear() <= year){
-
+                if(memberList.get(i).inGoodStanding()){
+                    RS.add(memberList.get(i));
+                }
+                memberList.remove(i);
             }
         }
+        return RS;
     }
 
     public static void main(String[] args) {
